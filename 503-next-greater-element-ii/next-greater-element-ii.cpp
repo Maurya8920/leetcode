@@ -11,10 +11,10 @@ public:
             }
             if(i<n){
             if(st.empty()){
-               ans[i%n]=-1;
+               ans[i]=-1;
                  }
                 else{
-                    ans[i%n]= st.top();
+                    ans[i]= st.top();
                 }
             }
                
