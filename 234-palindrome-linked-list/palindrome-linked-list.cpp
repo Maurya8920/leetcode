@@ -22,6 +22,9 @@ ListNode*middle(ListNode*head){
 
 
     bool isPalindrome(ListNode* head) {
+        if (head == NULL || head->next == NULL) {
+    return true;
+}
         ListNode*middlenode=middle(head);
         ListNode*curr=middlenode->next;
          ListNode*next=NULL; 
