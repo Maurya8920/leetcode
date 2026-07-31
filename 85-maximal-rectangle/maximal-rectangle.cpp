@@ -67,7 +67,8 @@ vector<int> prevsmallelement(vector<int> &arr , int n){
     int m= matrix[0].size();
     vector<int> heights(m,0);
     int area =0;
-    // int area = largestRectangleArea(heights, m);
+    
+    // this also works  int area = largestRectangleArea(heights, m);
     for(int i = 0; i<n ; i++){
         for(int j =0 ; j<m ; j++){
             if(matrix[i][j]!='0') {
