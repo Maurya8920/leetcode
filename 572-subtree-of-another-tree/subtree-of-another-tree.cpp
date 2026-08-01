@@ -20,10 +20,10 @@ bool issame(TreeNode* p, TreeNode* q){
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         if(root==NULL || subRoot==NULL) return root==subRoot;
         if(root==NULL) return false;
-        
+        bool identical= issame(root, subRoot);
         bool left=isSubtree(root->left, subRoot);
         bool right = isSubtree(root->right, subRoot);
-        bool identical= issame(root, subRoot);
+        
         return left || right ||identical;
         
         
