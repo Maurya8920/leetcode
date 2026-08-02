@@ -15,17 +15,24 @@ int height(TreeNode*p ){
     if(p==NULL) return 0;
     int l= height(p->left);
     int r= height(p->right);
+    
+    if(l==-1 || r==-1) return -1;
+    int diff =abs(l-r);
+    if(diff<=1){
     return max(l,r)+1;
+    }
+    else{
+        return -1;
+
+    }  
 }
     bool isBalanced(TreeNode* root) {
         if(root==NULL) return true;
         
-        int left = height(root->left);
-        int right = height(root->right);
-        int diff = abs(right-left);
-        bool isleft= isBalanced(root->left);
-        bool isright = isBalanced(root->right);
-        return isleft && isright && diff<=1;
+        int isbal = height(root);
+        
+        if(isbal==-1) return false;
+        return true;
       
 
         
