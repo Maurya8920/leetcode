@@ -21,7 +21,7 @@ public:
         while(!q.empty()){
              int n= q.size();
              vector<int> level(n);
-            for(int i = 0 ; i<=n-1 ; i++){
+            for(int i = 0 ; i<n ; i++){
             TreeNode*curr=q.front();
              q.pop();
                 int index=0;
