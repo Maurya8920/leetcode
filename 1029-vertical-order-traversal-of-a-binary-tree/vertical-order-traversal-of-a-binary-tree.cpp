@@ -35,8 +35,8 @@ public:
             sort(it.second.begin(), it.second.end());
         }
         vector<int> level;
-        for(auto vt : mp){
-            for(auto i :vt.second ){
+        for(auto it : mp){
+            for(auto i :it.second ){
           
                 level.push_back(i.second);
                 
