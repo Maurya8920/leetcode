@@ -42,7 +42,7 @@ public:
                 }
                  
                 }
-                 width =  rightindex -0  + 1;
+                 width =  rightindex  + 1;
               
 
                 maxi = max(maxi, width);
