@@ -15,11 +15,11 @@ public:
         if(root==NULL) return NULL;
         if(root->val==val) return root;
         if(val<root->val){
-      return  root->left=   searchBST(root->left , val);
+      return  searchBST(root->left , val);
         }
         
         else
-         return root->right=  searchBST(root->right, val);
+         return searchBST(root->right, val);
     
        }
 };
