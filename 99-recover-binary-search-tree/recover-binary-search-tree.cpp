@@ -20,8 +20,8 @@ void inorder(TreeNode*root , vector<TreeNode*> & ans){
     void recoverTree(TreeNode* root) {
         vector<TreeNode*> ans;
         inorder(root,ans);
-        TreeNode*first;
-        TreeNode*second;
+        TreeNode*first=NULL;
+        TreeNode*second=NULL;
         for(int i =1 ; i<ans.size() ; i++){
             if(ans[i]->val<=ans[i-1]->val){
                 if(first==NULL){
