@@ -11,16 +11,16 @@
  */
 class Solution {
 public:
-bool find(TreeNode*root, int k , map<int,int> &mp){
+bool find(TreeNode*root, int k , set<int> &st){
     if(root==NULL) return false;
-    if(mp.find(root->val)!=mp.end()) return true;
+    if(st.find(root->val)!=st.end()) return true;
     else{
-        mp[k-root->val]=1;
+        st.insert(k-root->val);
     }
-    return find(root->left,k,mp) || find(root->right,k,mp);
+    return find(root->left,k,st) || find(root->right,k,st);
 }
     bool findTarget(TreeNode* root, int k) {
-        map<int,int> mp;
-        return find(root, k , mp);
+        set<int> st;
+        return find(root, k , st);
     }
 };
