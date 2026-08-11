@@ -13,7 +13,6 @@ void dfs(int src,vector<vector<int>>& isConnected , vector<bool> & vis, int& pro
     int findCircleNum(vector<vector<int>>& isConnected) {
         int n = isConnected.size();
         vector<bool> vis(n,false);
-        int src=0;
         for(int v= 0 ; v<n ; v++){
             if(!vis[v]){
                 province++;
