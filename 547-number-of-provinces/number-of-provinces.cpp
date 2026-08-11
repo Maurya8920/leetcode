@@ -1,12 +1,12 @@
 class Solution {
 public:
 int province=0;
-void dfs(int src,vector<vector<int>>& isConnected , vector<bool> & vis, int& province){
+void dfs(int src,vector<vector<int>>& isConnected , vector<bool> & vis){
     if(vis[src]==true) return;
     vis[src]=true;
       for(int v = 0 ; v<isConnected.size(); v++){
         if(isConnected[src][v]==1 && !vis[v]){
-            dfs(v,isConnected,vis,province);
+            dfs(v,isConnected,vis);
         }
     }
 }
@@ -16,7 +16,7 @@ void dfs(int src,vector<vector<int>>& isConnected , vector<bool> & vis, int& pro
         for(int v= 0 ; v<n ; v++){
             if(!vis[v]){
                 province++;
-             dfs(v,isConnected,vis,province);
+             dfs(v,isConnected,vis);
             }
         }
         return province;
