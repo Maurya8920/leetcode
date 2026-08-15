@@ -11,18 +11,18 @@ public:
         }
         vector<int> dist(n+1,1e9);
         dist[k]=0;
-        queue<pair<int,int>> q;
-        q.push({0,k});
-        while(!q.empty()){
-            int dis = q.front().first;
-            int node = q.front().second;
-            q.pop();
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+        pq.push({0,k});
+        while(!pq.empty()){
+            int dis = pq.top().first;
+            int node = pq.top().second;
+            pq.pop();
         for(auto it : adj[node]){
             int v = it.first;
             int wt =  it.second;
             if(dis+wt<dist[v]){
                 dist[v]=dis+wt;
-                q.push({dis+wt,v});
+                pq.push({dis+wt,v});
             }
         }
         }
