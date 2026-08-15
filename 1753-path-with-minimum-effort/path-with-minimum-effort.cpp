@@ -10,7 +10,7 @@ public:
         pq.push({0,{0,0}});
         dist[0][0]=0;
         while(!pq.empty()){
-            int dis = pq.top().first;
+            int diff = pq.top().first;
             int row= pq.top().second.first;
             int col =  pq.top().second.second;
             pq.pop();
@@ -19,7 +19,7 @@ public:
                 int ncol= col+delcol[i];
                 
                 if(nrow>=0 && nrow<n && ncol>=0 && ncol<m){
-                    int neweffort=max(dis,abs(heights[row][col]-heights[nrow][ncol]));
+                    int neweffort=max(diff,abs(heights[row][col]-heights[nrow][ncol]));
                     if(neweffort<dist[nrow][ncol]){
                     dist[nrow][ncol]=neweffort;
                     pq.push({dist[nrow][ncol],{nrow,ncol}});
