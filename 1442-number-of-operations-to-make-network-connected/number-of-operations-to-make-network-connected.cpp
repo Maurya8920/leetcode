@@ -32,12 +32,12 @@ public:
         int m = connections.size();
         if(m<n-1) return -1;
         disjoint ds(n);
-        int count=0;
+        int extraedges=0;
        for(auto it : connections){
         int u = it[0];
         int v = it[1];
         if(ds.findpar(u)==ds.findpar(v)){
-            count++;
+            extraedges++;
              }
         else{
             ds.unionbysize(u,v);
@@ -49,7 +49,7 @@ public:
         component++;
         }
 }         
-if(count>=component-1){
+if(extraedges>=component-1){
     return component-1;
 }
     return -1;    
