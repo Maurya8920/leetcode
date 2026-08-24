@@ -7,9 +7,9 @@ void perm(vector<int> & nums, int idx , vector<vector<int>> & result){
       result.push_back(nums);
       return;  
     }
-    unordered_set<int> s;
+    set<int> s;
     for(int i =idx ; i<n ; i++){
-        if(s.count(nums[i])) continue; // means visited
+        if(s.find(nums[i])!=s.end()) continue; // means visited
         s.insert(nums[i]); // mark visited
        
         swap(nums[idx],nums[i]);
