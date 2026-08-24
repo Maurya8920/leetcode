@@ -9,12 +9,14 @@ void perm(vector<int> & nums, int idx , vector<vector<int>> & result){
     }
     set<int> s;
     for(int i =idx ; i<n ; i++){
-        if(s.find(nums[i])!=s.end()) continue; // means visited
-        s.insert(nums[i]); // mark visited
+        if(s.find(nums[i])==s.end()) {
+        s.insert(nums[i]); 
+        // mark visited
        
         swap(nums[idx],nums[i]);
         perm(nums,idx+1,result);
         swap(nums[idx],nums[i]);
+        }
         
     }
 }
