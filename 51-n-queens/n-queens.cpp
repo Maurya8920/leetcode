@@ -12,16 +12,22 @@ bool issafe(vector<string> & board , int row , int col , int n){
         }
     }
     // left diagonal
-    for(int i=row , j=col; i>=0 && j>=0;){
+    int i=row;
+    int j=col;
+    while(i>=0 && j>=0){
+        
         if(board[i][j]=='Q') return false;
         i-- ;
          j--;
     }
     // right diagonal 
-    for(int i=row , j=col;    i>=0 && j<n;  ){
-        if(board[i][j]=='Q') return false;
-        i-- ;
-         j++;
+    int k=row;
+    int l = col;
+    while( k>=0 && l<n){
+        
+        if(board[k][l]=='Q') return false;
+        k-- ;
+         l++;
     }
     return true;
     
