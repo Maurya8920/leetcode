@@ -1,8 +1,6 @@
 class Solution {
 public:
-bool ispali(string &st){
-    int i = 0;
-    int j= st.length()-1;
+bool ispali(string &st,int i , int j){
     while(i<=j){
         if(st[i]!=st[j]){
             return false;
@@ -21,14 +19,8 @@ void pali(string &s , int idx,vector<string> & ans , vector<vector<string>> & re
         return;
     }
     for(int i = idx ; i<n ; i++){
-        string st = "";
-        for(int j=idx ; j<=i ; j++){
-            st.push_back(s[j]);
-
-        }
-        
-        if(ispali(st)){
-             ans.push_back(st);
+        if(ispali(s,idx,i)){
+             ans.push_back(s.substr(idx,i-idx+1));
              pali(s,i+1,ans,result);
         ans.pop_back();
  }
