@@ -27,42 +27,29 @@ if(r==9){
     return true;
     
 } 
+
+int nextrow =r;
+int nextcol =c+1;
+if(nextcol==9){
+    nextrow=r+1;
+    nextcol=0;
+}
 // already filled current cell
    if(board[r][c]!='.' ){
-           if(c==8){
-            if(solve(board,r+1,0)) return true;
-           }
-           else{
-            if(solve(board,r,c+1)) return true;
-           }
+          return solve(board , nextrow, nextcol);
               }
               // fill cell try 1 to 9 digits
 for(int k =1 ; k<=9 ; k++){
         if(board[r][c]=='.' && issafe(board , r,c,k)){
             // place numbers
             board[r][c]='0'+k;
-        
-            if(c==8){
-                // if suduko not solved then backtack
-               if (solve(board, r+1,0)==false){
-                   board[r][c]='.';
-               }
-               else{
-                // sudko solved
-                return true;
-               }
+            //sudoko solved
+
+
+            if(solve(board , nextrow, nextcol)) return true;
+            // backtrack if false 
+            board[r][c]='.';
             }
-            if(c!=8){
-                 // if suduko not solved then backtack
-                if(solve(board, r,c+1)==false){
-                  board[r][c]='.';
-                }
-                else{
-                    // sudoko solved
-                    return true;
-                }
-            }
-        }
 
     }
     
