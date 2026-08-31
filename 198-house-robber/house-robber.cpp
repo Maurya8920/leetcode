@@ -4,12 +4,12 @@ int solve(vector<int> & nums , int n , vector<int> & dp){
     if(n==0) return 0;
     if(n==1) return nums[n-1];
     if(dp[n]!=-1) return dp[n];
-    int l= solve(nums,n-1,dp);
-    int r = INT_MIN;
+    int skip= solve(nums,n-1,dp);
+    int take = INT_MIN;
     if(n>1){
-     r = solve(nums,n-2,dp)+nums[n-1];
+     take = solve(nums,n-2,dp)+nums[n-1];
     }
-    return dp[n]=max(l,r);
+    return dp[n]=max(skip,take);
 }
     int rob(vector<int>& nums) {
         int n= nums.size();
