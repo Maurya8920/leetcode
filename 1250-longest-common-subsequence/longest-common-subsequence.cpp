@@ -6,7 +6,9 @@ public:
         if(t1[n-1]==t2[m-1]){
             return t[n][m]=lcs(t1,t2,n-1,m-1,t)+1;
         }
-        return t[n][m]= max( lcs(t1,t2,n,m-1,t),lcs(t1,t2,n-1,m,t));
+        int l= lcs(t1,t2,n,m-1,t);
+        int r= lcs(t1,t2,n-1,m,t);
+        return t[n][m]= max( l,r);
     }
     int longestCommonSubsequence(string text1, string text2) {
         int n= text1.size();
