@@ -19,10 +19,14 @@ bool match(string &s1, string &s2, int n , int m){
    
     if(s2[m-1]=='.') return dp[n][m]= match(s1,s2,n-1,m-1);
     if(s2[m-1]=='*') {
-        return dp[n][m]= match(s1,s2,n,m-2)|| (s1[n-1]==s2[m-2] || s2[m-2]=='.') && match(s1,s2,n-1,m);
+        bool zero = match(s1,s2,n,m-2);
+        bool more = false;
+        if(s1[n-1]==s2[m-2] || s2[m-2]=='.'){
+            more= match(s1,s2,n-1,m);
+        }
+        return dp[n][m]= zero || more;
     }
-
-   return false;
+    return false;
  
 }
 
