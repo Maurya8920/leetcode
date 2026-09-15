@@ -5,7 +5,7 @@ public:
         vector<int> temp;
         temp.push_back(nums[0]);
         int len =1;
-        for(int i =0 ; i<n ; i++){
+        for(int i =1 ; i<n ; i++){
             if(nums[i]>temp.back()){
                 temp.push_back(nums[i]);
                 len++;
