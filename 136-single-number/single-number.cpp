@@ -8,12 +8,18 @@ public:
             mp[nums[i]]++;
 
         }
-        for(int i=0 ; i<n ; i++){
-            if(mp[nums[i]]==1){
-                ans= nums[i];
-
-            }
+    for(auto it :mp){
+        if(it.second==1){
+            ans=it.first;
         }
+    }
+        // or
+        // for(int i=0 ; i<n ; i++){
+        //     if(mp[nums[i]]==1){
+        //         ans= nums[i];
+
+        //     }
+        // }
         return ans;
     }
 };
